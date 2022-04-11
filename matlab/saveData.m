@@ -5,7 +5,7 @@ function saveData(file)
 loadNPAData;
 data = load(file);
 
-pad_begin_id = data.v0(1)/data.stepsize - 1;    
+pad_begin_id = round(data.v0(1)/data.stepsize) - 1;    
     
 v0 = 0:data.stepsize:2;
 v1 = 2 - v0;
@@ -23,7 +23,7 @@ if strcmp(file, 'C3.mat')
     fprintf(fid, '%d\n', classical_qsw);
     fclose(fid);
     
-    [fid, msg] = fopen('data/seeesaw_C3_0_2', 'wt');
+    [fid, msg] = fopen('data/seesaw_C3_0_2', 'wt');
     assert(fid>=3, msg);
     fprintf(fid, '%d\n', qsw);
     fclose(fid);
@@ -45,7 +45,7 @@ elseif strcmp(file, 'C5.mat')
     fprintf(fid, '%d\n', classical_qsw);
     fclose(fid);
     
-    [fid, msg] = fopen('data/seeesaw_C5_0_2', 'wt');
+    [fid, msg] = fopen('data/seesaw_C5_0_2', 'wt');
     assert(fid>=3, msg);
     fprintf(fid, '%d\n', qsw);
     fclose(fid);
@@ -72,7 +72,7 @@ elseif strcmp(file, 'C5sym.mat')
     fprintf(fid, '%d\n', classical_qsw);
     fclose(fid);
     
-    [fid, msg] = fopen('data/seeesaw_C5Sym_0_2', 'wt');
+    [fid, msg] = fopen('data/seesaw_C5Sym_0_2', 'wt');
     assert(fid>=3, msg);
     fprintf(fid, '%d\n', qsw);
     fclose(fid);
