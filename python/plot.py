@@ -3,6 +3,10 @@ import matplotlib.pylab as plt
 import numpy as np
 from cycler import cycler
 
+"""
+File used to plot for v0 between 0 and 1, with v2 + v1 = 2 and V0/V1 as abscisse.
+We ultimately want to plot v0 between 0 and 2, and V0/(V0 + V1) as abssices, this is done in the graph.py file.
+"""
 def plotSeeSaw5():
     plt.rc('text', usetex=True)
     plt.rc('font', family='serif')

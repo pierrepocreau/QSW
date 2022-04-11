@@ -250,7 +250,7 @@ def graph(nbPlayers, sym, delta=0.01, start=0, end=2, seeSawRepeatLow=10, seeSaw
     plt.show()
 
 if __name__ == '__main__':
-    nbPlayers = 5
+    nbPlayers = 3
     sym=False #Sym for 5 players
     delta = 0.01
     start = 0
