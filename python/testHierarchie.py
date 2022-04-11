@@ -1,6 +1,7 @@
 from canonicOp import *
 from itertools import product
 import unittest
+import numpy as np
 from game import Game
 from hierarchie import Hierarchie
 

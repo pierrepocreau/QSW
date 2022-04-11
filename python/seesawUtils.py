@@ -86,29 +86,23 @@ def quantumEqCheck(game, POVMS, rho, threshold, dimension=2):
 
 
 if __name__ == '__main__':
-    nbPlayers = 5
-    v0 = 1/2
+    nbPlayers = 3
+    v0 = 2/3
     v1 = 2 - v0
-    print(v0/v1)
     dimension = 2
-    symmetric=True
+    symmetric=False
     game = Game(nbPlayers, v0, v1, sym=symmetric)
-    #qsw, seeSaw = fullSeeSaw(game, dimension=dimension)
+    qsw, seeSaw = fullSeeSaw(game, dimension=dimension)
 
-    state = quantumStrategies.ghzState(nbPlayers)
-    povms = quantumStrategies.graphStatePOVMS(nbPlayers)
-    #print("Test if seesaw strategy is quantum equilibrium: ",
-    #      quantumEqCheck(game, seeSaw.POVM_Dict, seeSaw.rho, threshold=10e-6, dimension=dimension))
+    print("Test if seesaw strategy is quantum equilibrium: ",
+          quantumEqCheck(game, seeSaw.POVM_Dict, seeSaw.rho, threshold=10e-6, dimension=dimension))
 
-    print("Test if ghz strategy is quantum equilibrium: ",
-          quantumEqCheck(game, povms, state, threshold=10e-6, dimension=dimension))
+    theta = quantumStrategies.optimalTheta(game)
+    povms = quantumStrategies.devStratPOVMs(theta, nbPlayers)
+    rho = quantumStrategies.devStratRho(theta, nbPlayers)
 
-    #theta = quantumStrategies.optimalTheta(game)
-    #povms = quantumStrategies.devStratPOVMs(theta, nbPlayers)
-    #rho = quantumStrategies.devStratRho(theta, nbPlayers)
-
-    #print("Test if deviated strategy is quantum equilibrium: ",
-    #      quantumEqCheck(game, povms, rho, threshold=10e-6, dimension=dimension))
+    print("Test if deviated strategy is quantum equilibrium: ",
+          quantumEqCheck(game, povms, rho, threshold=10e-6, dimension=dimension))
 
 
 

@@ -3,8 +3,8 @@ import cvxpy as cp
 from game import Game
 from hierarchie import Hierarchie
 from classicalStrategies import genRhoClassic, classicalStratPOVM, bestClassicalStrategy
-from quantumStrategies import graphStatePOVMS, graphState
-from seesawUtils import fullSeeSaw, printPOVMS
+from quantumStrategies import graphStatePOVMS, graphState, ghzState, genRandomPOVMs
+from seesawUtils import fullSeeSaw, quantumEqCheck, printPOVMS
 import matplotlib.pyplot as plt
 from toqito.state_metrics import fidelity
 import quantumStrategies
@@ -250,7 +250,7 @@ def graph(nbPlayers, sym, delta=0.01, start=0, end=2, seeSawRepeatLow=10, seeSaw
     plt.show()
 
 if __name__ == '__main__':
-    nbPlayers = 3
+    nbPlayers = 5
     sym=False #Sym for 5 players
     delta = 0.01
     start = 0

@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def bestClassicalStrategy(game):
     """
     Social welfare of the best classical strategy for a given game.

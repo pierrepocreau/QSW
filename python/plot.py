@@ -1,12 +1,10 @@
+import quantumStrategies
 from graph import readFile
 import matplotlib.pylab as plt
 import numpy as np
 from cycler import cycler
+from game import Game
 
-"""
-File used to plot for v0 between 0 and 1, with v2 + v1 = 2 and V0/V1 as abscisse.
-We ultimately want to plot v0 between 0 and 2, and V0/(V0 + V1) as abssices, this is done in the graph.py file.
-"""
 def plotSeeSaw5():
     plt.rc('text', usetex=True)
     plt.rc('font', family='serif')
@@ -53,7 +51,7 @@ def plotSeeSaw5():
 
     plt.title(r"Upper and lower bounds $NC_{00}(C_5)$.")
     plt.grid()
-    plt.savefig("plots/5 players.png", dpi=300, pad_inches=.1, bbox_inches='tight')
+    plt.savefig("5 players.png", dpi=300, pad_inches=.1, bbox_inches='tight')
     plt.clf()
 
 def plotSeesaw3():
@@ -94,7 +92,7 @@ def plotSeesaw3():
 
     plt.title(r"Upper and lower bounds for $NC(C_3)$.")
     plt.grid()
-    plt.savefig("plots/3 players.png", dpi=300, pad_inches=.1, bbox_inches='tight')
+    plt.savefig("3 players.png", dpi=300, pad_inches=.1, bbox_inches='tight')
     plt.clf()
 
 def plotSeeSaw5Sym():
@@ -142,7 +140,7 @@ def plotSeeSaw5Sym():
 
     plt.title(r"Upper and lower bounds for $NC_{01}(C_5)$.")
     plt.grid()
-    plt.savefig("plots/5 players sym.png", dpi=300, pad_inches=.1, bbox_inches='tight')
+    plt.savefig("5 players sym.png", dpi=300, pad_inches=.1, bbox_inches='tight')
     plt.clf()
 
 if __name__ == '__main__':
